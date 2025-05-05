@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="Суши-бар Йокогама. Сашими, суши, роллы, напитки">
+		<meta name="keywords" content="суши-бар, Йокогама, сашими, суши, ролл">
+		<meta name="author" content="Читатель, Лидия">
+		<meta name="generator" content="Блокнот, Notepad++">
+		<title>Заказ еды на вынос :: Йокогама: суши-бар</title>
+		<link href="../styles/2.1.css" rel="stylesheet" type="text/css"> 
+	</head>
+	<body>
+		<header>
+			<h1>Суши-бар <em>&laquo;Йокогама&raquo;</em></h1>
+		</header>
+	<!--	<nav>
+			<div><a href="../index.html">Главная</a></div>
+			<div><a href="../pages/sashimi.html">Сашими</a></div>
+			<div><a href="../pages/sushi.html">Суши</a></div>
+			<div><a href="../pages/rolls.html">Роллы</a></div>
+			<div><a href="../pages/pricelist.html">Прайс-лист</a></div>
+		</nav> -->
+		<main>
+			<h2>Заказ еды на вынос</h2>
+			<form action="mailto:order@yokogama.ru" method="post" enctype="text/plain">
+				<p><label for="dishes">Что желаете заказать?</label><br>
+				<select name="dishes" id="dishes" size="6" multiple>
+					<optgroup label="Сашими">
+						<option value="unagi">Унаги</option>
+						<option value="hamachi">Хамачи</option>
+					</optgroup>
+					<optgroup label="Суши">
+						<option value="chukka">Чукка</option>
+						<option value="maguro">Магуро</option>
+						<option value="tobiko">Тобико</option>
+					</optgroup>
+					<optgroup label="Роллы">
+						<option value="chukka">Кунсэй батакон</option>
+						<option value="maguro">Аригато</option>
+						<option value="tobiko">Мексиканский</option>
+					</optgroup>
+				</select></p>
+				<p><label for="phone">По какому телефону Вам перезвонить?</label><br>
+				<input type="text" name="phone" id="phone" required></p>
+				<p><input type="submit"></p>
+			</form>
+		</main>
+		<footer>
+			<p>&copy; читатели книги &laquo;HTML и CSS&raquo;<br>Все права защищены.</p>
+		</footer>
+	</body>
+</html>

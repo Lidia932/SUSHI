@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="Суши-бар Йокогама. Сашими, суши, роллы, напитки">
+		<meta name="keywords" content="суши-бар, Йокогама, сашими, суши, ролл">
+		<meta name="author" content="Читатель, Лидия">
+		<meta name="generator" content="Блокнот, Notepad++">
+		<title>Заказ столика :: Йокогама: суши-бар</title>
+		<link href="../styles/2.1.css" rel="stylesheet" type="text/css"> 
+	</head>
+	<body>
+		<header>
+			<h1>Суши-бар <em>&laquo;Йокогама&raquo;</em></h1>
+		</header>
+	<!--	<nav>
+			<div><a href="../index.html">Главная</a></div>
+			<div><a href="../pages/sashimi.html">Сашими</a></div>
+			<div><a href="../pages/sushi.html">Суши</a></div>
+			<div><a href="../pages/rolls.html">Роллы</a></div>
+			<div><a href="../pages/pricelist.html">Прайс-лист</a></div>
+		</nav> -->
+		<main>
+			<h2>Заказ столика</h2>
+			<form action="mailto:order@yokogama.ru" method="post" enctype="text/plain">
+				<p><label for="name">Как к Вам обращаться?</label><br>
+				<input type="text" name="name" id="name" required></p>
+				<p><label for="phone">По какому телефону Вам перезвонить?</label><br>
+				<input type="text" name="phone" id="phone" required></p>
+				<p><label for="time">На какое время желаете заказать столик?</label><br>
+				<input type="time" name="time" id="time" required></p>
+				<fieldset>
+					<legend>Укажите сведения о Вас и Вашей компании</legend>
+					<p><label for="cnt">На сколько человек заказывается столик?</label><br>
+					<input type="radio" name="cnt" id="cnt" value="1"> 1
+					&nbsp;&nbsp;&nbsp;
+					<input type="radio" name="cnt" value="2"> 2
+					&nbsp;&nbsp;&nbsp;
+					<input type="radio" name="cnt" id="cnt" value="more"> 3 и более</p>
+					<p><input type="checkbox" name="children" value="*">Среди клиентов будут дети</p>
+				</fieldset>
+				<p><input type="image" src="../images/order_button.jpg"></p>
+			</form>
+		</main>
+		<footer>
+			<p>&copy; читатели книги &laquo;HTML и CSS&raquo;<br>Все права защищены.</p>
+		</footer>
+	</body>
+</html>

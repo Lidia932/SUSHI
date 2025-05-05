@@ -1,0 +1,99 @@
+ /*
+	Укажем шрифт для тега <body> - родителя всех элементов. Так удобнее
+*/
+@font-face {
+	font-family: "Caviar Dreams";
+	src: url(../font/CaviarDreams.ttf);
+}
+@font-face {
+	font-family: "Caviar Dreams";
+	src: url(../font/Caviar_Dreams_Bold.ttf);
+	font-weight: bold;
+}
+@font-face {
+	font-family: "Caviar Dreams";
+	src: url(../font/CaviarDreams_Italic.ttf);
+	font-weight: italic;
+}
+@font-face {
+	font-family: "Caviar Dreams";
+	src: url(../font/CaviarDreams_BoldItalic.ttf);
+	font-weight: bold;
+	font-weight: italic;
+}
+body {font-family: Arial;}
+h1 {
+	font-size: 32pt;
+	font-family: Verdana;
+}
+header {text-align: center;}
+main {text-align: justify;}
+footer {text-align: right;}
+p {
+	font-size: 14pt !important;
+}
+h1 em {font-weight: normal}
+.picture img {width: 45%;}
+p.greeting {font-size: 24pt;}
+.advertising {margin-left: 30pt;}
+.advertising div {
+		font-size: 12pt;
+		margin-top: 5pt;
+		margin-bottom: 5pt;
+	}
+.bigger {font-size: 16pt;}
+table.pricelist th, table.pricelist td {
+	border: grey thin solid;
+	padding: 4px;
+	}
+table.catalog h3 {
+	font-family: "Caviar Dreams";
+	font-size: 20pt;
+}
+table.catalog td {
+	border-top: black thin dotted;
+	border-bottom: black thin dotted;
+	padding: 10px;
+	}	
+table.catalog img {width: 200px;}
+table.pricelist tbody th[colspan] {
+	text-align: center;
+}
+table.pricelist tbody td:last-child:not(:only-child) {
+	background-color: lightgrey;
+	border: none;
+}
+table.pricelist thead th {
+	color: white;
+	background-color: grey;
+	 }
+table.pricelist tfoot td {
+	text-align: right;
+	font-style: italic;
+	}
+nav {
+	float: left;
+	width: 150px;
+	margin: 10px 30px 10px 0px;
+	padding: 10px;
+	border: black medium double;
+	border-radius: 10px;
+}
+nav div {
+	font-size: 25px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+table.catalog tr:first-child td {
+	border-top: none;
+}
+table.catalog tr:last-child td {
+	border-bottom: none;
+}
+table.catalog td p:first-of-type::first-letter {
+	font-size: 24pt;
+}
+p::selection {
+	color: black;
+	background-color: orange;
+}
