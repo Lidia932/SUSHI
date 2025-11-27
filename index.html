@@ -42,6 +42,67 @@
 	})(window, document, 'script', 'cloud.roistat.com', 'd5e920396b192a0b9ca83094f0fc2868');
 	</script>
 	<!-- Roistat Counter End -->
+	 <!-- BEGIN TELEGRAMBOT INTEGRATION WITH ROISTAT -->
+<div class="js-telegrambot-botname-container" style="display:none;">tostotobbot</div>
+<script>
+    (function() {
+        if (window.roistat !== undefined) {
+            handler();
+        } else {
+            var pastCallback = typeof window.onRoistatAllModulesLoaded === "function" ? window.onRoistatAllModulesLoaded : null;
+            window.onRoistatAllModulesLoaded = function () {
+                if (pastCallback !== null) {
+                    pastCallback();
+                }
+                handler();
+            };
+        }
+
+        function handler() {
+            function init() {
+                appendMessageToLinks();
+
+                var delays = [1000, 5000, 15000];
+                setTimeout(function func(i) {
+                    if (i === undefined) {
+                        i = 0;
+                    }
+                    appendMessageToLinks();
+                    i++;
+                    if (typeof delays[i] !== 'undefined') {
+                        setTimeout(func, delays[i], i);
+                    }
+                }, delays[0]);
+            }
+
+            function replaceQueryParam(url, param, value) {
+                var explodedUrl = url.split('?');
+                var baseUrl = explodedUrl[0] || '';
+                var query = '?' + (explodedUrl[1] || '');
+                var regex = new RegExp("([?;&])" + param + "[^&;]*[;&]?");
+                var queryWithoutParameter = query.replace(regex, "$1").replace(/&$/, '');
+                return baseUrl + (queryWithoutParameter.length > 2 ? queryWithoutParameter  + '&' : '?') + (value ? param + "=" + value : '');
+            }
+
+            function appendMessageToLinks() {
+                var botName = document.querySelector('.js-telegrambot-botname-container').textContent;
+                var linkElements = document.querySelectorAll('[href*="//t.me/' + botName + '"]');
+                for (var elementKey in linkElements) {
+                    if (linkElements.hasOwnProperty(elementKey)) {
+                        var element = linkElements[elementKey];
+                        element.href = replaceQueryParam(element.href, 'start', window.roistat.getVisit());
+                    }
+                }
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
+        };
+    })();
+</script>
+<!-- END TELEGRAMBOT INTEGRATION WITH ROISTAT -->
 		<header>
 			<h1>Суши-бар <em>&laquo;Йокогама&raquo;</em></h1>
 			<p class="picture"><img src="images/2.png" title="Суши"></p>
@@ -80,6 +141,8 @@
 					</ul>
 				</li>
 			</ul></p>
+ <a href="https://t.me/tostotobbot">Напишите нам в Telegram Bot</a>
+
 			<p>Посмотрите наш <a href="pages/pricelist.html" target="_blank">прайс-лист</a>.</p>
 			<p>Участвуйте в нашей рекламной акции!</p>
 			<ol>
