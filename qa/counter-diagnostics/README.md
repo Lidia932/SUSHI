@@ -14,6 +14,8 @@ browser DOM or using DevTools Overrides does not change server-fetched HTML.
 - 04-body-only.html: One counter in body; 1 inline counter script(s).
 - 05-no-head.html: No explicit head element; one counter in body; 1 inline counter script(s).
 - 06-no-body.html: No explicit body element; one counter in head; 1 inline counter script(s).
+- 07-other-project.html: Counter for project 257999; diagnose from project 208347; 1 inline counter script(s).
+- 08-legacy-counter.html: Legacy counter for project 208347 supplied by the developer; 1 inline counter script(s).
 
 Case 02 deliberately runs two loaders. The second uses js.async = true instead
 of js.async = 1, so the script source differs while the project remains the same.
@@ -24,6 +26,12 @@ Cases 01, 03 and 04 must not report multiple counters; case 02 must still report
 multiple counters. For cases 05 and 06, compare diagnostics with the baseline
 behavior and the developer's regression expectation.
 
-Not included: another project's counter, a verified legacy snippet, GTM, or
+Case 07 uses the public installation key read from project 257999 settings.
+Run diagnostics from project 208347 to exercise the other-project warning.
+Case 08 uses the legacy snippet supplied by the developer in the PR discussion
+on 2026-09-28, with CLOUD_DOMAIN and PROJECT_KEY set to cloud.roistat.com and
+the existing project 208347 key. It omits roistatPage and roistatReferrer.
+
+Not included: GTM (no published test container is available) or
 the customer website reproduction. Do not treat fixture validation as a passed
 Roistat diagnostic check. Run the actual diagnostics on the required beta build.
